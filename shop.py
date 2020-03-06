@@ -39,7 +39,7 @@ def checkout(pre_checkout_query):
 @bot.message_handler(content_types=['successful_payment'])
 def got_payment(message):
     bot.send_message(message.chat.id,
-                     'Вы успешно сделали транзакцию на `{} {}`! '.format(message.successful_payment.total_amount / 100, message.successful_payment.currency),
+                     'Вы успешно совершили транзакцию на `{} {}`! '.format(message.successful_payment.total_amount / 100, message.successful_payment.currency),
                      parse_mode='Markdown')
 bot.skip_pending = True
 bot.polling(none_stop=True, interval=0)
